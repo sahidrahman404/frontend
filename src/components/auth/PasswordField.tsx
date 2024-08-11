@@ -13,8 +13,9 @@ import {
 import { Path, UseFormReturn } from "react-hook-form";
 import { SignUp } from "@/components/auth/SignUpForm";
 import { SignIn } from "@/components/auth/SignInForm";
+import { ResetPassword } from "@/components/auth/ResetPasswordForm";
 
-export function PasswordField<T extends SignIn | SignUp>({
+export function PasswordField<T extends SignIn | SignUp | ResetPassword>({
   label = "Password",
   form,
   name,

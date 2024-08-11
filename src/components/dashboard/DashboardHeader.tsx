@@ -4,6 +4,7 @@ import { config } from "@/config";
 import Link from "next/link";
 import { getUser } from "@/auth/authServices";
 import { NameForm } from "@/components/dashboard/NameForm";
+import { ResetPasswordButton } from "@/components/auth/ResetPasswordButton";
 
 export async function DashboardHeader() {
   const user = await getUser();
@@ -18,6 +19,7 @@ export async function DashboardHeader() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div className="text-lg font-medium text-foreground">{user.email}</div>
+        <ResetPasswordButton />
         <Button
           variant="secondary"
           size="icon"
