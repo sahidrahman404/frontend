@@ -17,5 +17,7 @@ export const config = {
     sessionStatsPath:
       process.env.NEXT_PUBLIC_SESSION_STATS_PATH ?? "/v1/sessions/stats",
     userStatsPath: process.env.NEXT_PUBLIC_USER_STATS_PATH ?? "/v1/users/stats",
+    resetPasswordPath:
+      process.env.NEXT_PUBLIC_RESET_PASSWORD_PATH ?? "/v1/users/reset-password",
   },
 };
