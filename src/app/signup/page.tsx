@@ -9,7 +9,7 @@ export default async function SignUp() {
     if (!user.emailVerified) {
       redirect("/verify");
     }
-    redirect("/");
+    redirect("/dashboard");
   }
 
   return (

@@ -60,7 +60,7 @@ export default function SignInForm() {
       form.setError("password", { message: data.data.msg });
       return;
     }
-    redirectApp("/");
+    redirectApp("/dashboard");
   }
 
   return (

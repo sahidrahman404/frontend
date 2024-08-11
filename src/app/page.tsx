@@ -1,21 +1,8 @@
+import { Home } from "@/components/Home";
 import { getUser } from "@/auth/authServices";
-import { redirect } from "next/navigation";
-import Dashboard from "@/components/dashboard/Dashboard";
 
-export default async function Home() {
+export default async function HomePage() {
   const user = await getUser();
 
-  if (!user) {
-    redirect("/signin");
-  }
-
-  if (user && !user.emailVerified) {
-    redirect("/verify");
-  }
-
-  return (
-    <div className="min-h-screen flex items-center">
-      <Dashboard />
-    </div>
-  );
+  return <Home user={user} />;
 }

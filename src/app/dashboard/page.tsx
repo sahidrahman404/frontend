@@ -1,20 +1,21 @@
 import { getUser } from "@/auth/authServices";
 import { redirect } from "next/navigation";
-import SignInForm from "@/components/auth/SignInForm";
+import Dashboard from "@/components/dashboard/Dashboard";
 
-export default async function SignIn() {
+export default async function DashboardPage() {
   const user = await getUser();
 
-  if (user) {
-    if (user.emailVerified) {
-      redirect("/dashboard");
-    }
+  if (!user) {
+    redirect("/signin");
+  }
+
+  if (user && !user.emailVerified) {
     redirect("/verify");
   }
 
   return (
     <div className="min-h-[100dvh] flex items-center">
-      <SignInForm />
+      <Dashboard />
     </div>
   );
 }

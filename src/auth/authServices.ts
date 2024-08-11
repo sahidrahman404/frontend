@@ -17,6 +17,8 @@ const userSchema = z.object({
   }),
 });
 
+export type User = z.infer<typeof userSchema>;
+
 export async function getUser() {
   const cookieStore = cookies();
   const response = await fetch(
