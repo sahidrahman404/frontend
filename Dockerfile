@@ -35,6 +35,7 @@ ENV NEXT_PUBLIC_SIGN_OUT_PATH=/v1/users/signout
 ENV NEXT_PUBLIC_UPDATE_USER_NAME_PATH=/v1/users/update-name
 ENV NEXT_PUBLIC_SESSION_STATS_PATH=/v1/sessions/stats
 ENV NEXT_PUBLIC_USER_STATS_PATH=/v1/users/stats
+ENV NEXT_PUBLIC_RESET_PASSWORD_PATH=/v1/users/reset-password
 
 RUN yarn build
 
