@@ -1,12 +1,11 @@
 import { UserCheck, UserCog, UserPlus } from "lucide-react";
 import { getSessionsStatistics } from "@/dashboard/dashboardServices";
-import { redirect } from "next/navigation";
 
 export async function SessionsStatistics() {
   const stats = await getSessionsStatistics();
 
   if (!stats) {
-    redirect("/signin");
+    return null;
   }
   return (
     <div className="grid gap-2 text-sm">

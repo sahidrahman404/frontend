@@ -3,16 +3,15 @@ import { LogOutIcon } from "lucide-react";
 import { config } from "@/config";
 import Link from "next/link";
 import { getUser } from "@/auth/authServices";
-import { redirect } from "next/navigation";
 import { NameForm } from "@/components/dashboard/NameForm";
 
 export async function DashboardHeader() {
   const user = await getUser();
   if (!user) {
-    redirect("/signin");
+    return null;
   }
   if (user && !user.emailVerified) {
-    redirect("/verify");
+    return null;
   }
 
   return (
